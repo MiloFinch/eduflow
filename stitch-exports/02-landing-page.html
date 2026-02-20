@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduFlow - Nowoczesna platforma e-learningowa</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6961ff",
+              "secondary": "#4ECDC4",
+              "accent": "#FF6B9D",
+              "background-light": "#f5f5f8",
+              "background-dark": "#100f23",
+              "footer-dark": "#2D2D30",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Navbar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-2xl">auto_stories</span>
+</div>
+<h1 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">EduFlow</h1>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Kursy</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Ceny</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Dla firm</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">O nas</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-primary transition-colors">
+                    Zaloguj si«
+                </button>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 transition-all active:scale-95">
+                    Zarejestruj si«
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full py-12">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                    Nowa wersja 2.0 dost«pna
+                </div>
+<h1 class="text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                    Ucz si« w swoim <span class="text-primary">tempie</span>
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                    Nowoczesna platforma e-learningowa, kt—ra dostosowuje si« do Twoich potrzeb. Rozwijaj umiej«tnoæci z najlepszymi mentorami z ca¸ego æwiata.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl shadow-primary/25 transition-all hover:-translate-y-1">
+                        Zacznij za darmo
+                    </button>
+<button class="border-2 border-slate-200 dark:border-slate-800 hover:border-primary/30 text-slate-700 dark:text-slate-200 px-8 py-4 rounded-xl text-lg font-bold transition-all flex items-center gap-2">
+                        Zobacz kursy
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<div class="flex -space-x-3">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark" data-alt="Portrait of a smiling student avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD46UejFntcPdfhokAfejlW4a3oMRQFv6IK9ZWdt4OglMqAW5zUUQaGSy1xXGMOZXUzkY5fLc_N_7tQx_uFB7rI7BjKSBH-T-yqq2K29csO4Kudc8VMw0ZIfwz0sbYlT0Td6AfB6_Jejow7aa_4u8f7mOLccbhcso33e8VFhdkSszNkYDDL6-Mp-yc2snMI0M2kqZnS9bWZwDwgm5euHgwf6PRj8-j-Ny6UrBAeZXe4S0qw4K3iq3EF5LjtJS-5e7CllSgGvRwe_WdJ"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark" data-alt="Portrait of a diverse female learner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQXPDUj69tbiKOFb9JdMow7hjXUJoBdDZLdfdC_5Td2jafsGRDYgo2wu8KwpQfnTjsAZMhNJ48ktHsbG_eI2QK-rB_R4Un0Q58VClWg4F6zV8noTLH-sIrnBSVqTvY_9M7wFbeW6OWdRpa9RkyLSyOMnJiJHgL7wRErE8otdtWFyEIMY1tb59FF77Sg0xMfE5MjVExkywaMN1MvK2XuxqwQAeHqOlKhKH1QL4h4LerNuXpsEVLjGj5OjmBHhz6L8TyrnqsYr5uMNhM"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark" data-alt="Portrait of an enthusiastic adult learner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUjSqLLeLFOh-d0mSUMsA7sxV4B9cHQ4lXuJo7Ac9o6V1ZK2vr3Px_qsKbGrwIHt4tb0llKV7Rno0vz5Xu7u4m_48KD6ijxSEIjKgQU2fSCoY_HEJ-tk_uCffme-7CZ_mHzVAG9Goev5BYXoDX_Z2yXBQyVQn3qMIcL59th4KTZ-lNDU2exwB_pMShyvAFcZgsx9ED1S7wGN3ZAxmMd0ct96yv1kRWwbRfQHgD6dR7vFIITMRW8DXQ6SFqZypULYruoT-XZX2a2U-l"/>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold">+2k</div>
+</div>
+<p class="text-sm text-slate-500 font-medium">Do¸ˆcz do ponad 2,000 aktywnych student—w</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-[100px]"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-none bg-white dark:bg-slate-800 p-2 border border-slate-100 dark:border-slate-700">
+<img alt="EduFlow Workspace" class="rounded-2xl w-full h-full object-cover aspect-square lg:aspect-video" data-alt="Group of diverse students working together on laptops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzkgfpwt1VAz_2MKv_97kKwEOedu3859AoREDhjThXM1Cwnj4b04sHgGyyGbdb1jwvvUAKiFw-BsBr2I_AktT1nZmIvDFDAPbmb5bGjQYeQiJambJpl6PFprtOoavbypV8Zzz5-AWS9I0U120Yk3DmtpIlGZkYkh19lI7xBT_pvKOFaB3e88hWKaZS8ymBmNZHKQEjpfOnnvGyqzef4fqGkYYBVmnMbe-0B7zLWpwlUMohT3mFmBUfx630V0GGXQxP8S0taXIMd2tX"/>
+<div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur p-4 rounded-2xl flex items-center justify-between border border-white/50">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-secondary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Live teraz</p>
+<p class="text-sm font-bold">Warsztaty UX Design</p>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-red-500 text-[10px] font-black text-white animate-pulse">LIVE</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Features Section -->
+<section class="py-24 bg-white dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20 flex flex-col gap-4">
+<h2 class="text-primary font-bold tracking-widest uppercase text-sm">Zalety</h2>
+<h3 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Dlaczego EduFlow?</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Zaprojektowaliæmy naszˆ platform« tak, aby nauka by¸a nie tylko efektywna, ale r—wnieı przyjemna i inspirujˆca.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Elastyczny grafik</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Ucz si« kiedy chcesz i gdzie chcesz. Nasze kursy sˆ dost«pne 24/7 na kaıdym urzˆdzeniu.</p>
+</div>
+<!-- Feature 2 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:-rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Certyfikaty</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Otrzymuj uznawane w branıy certyfikaty po kaıdym ukoÄczonym module i kursie.</p>
+</div>
+<!-- Feature 3 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Najlepsi mentorzy</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Ucz si« bezpoærednio od ekspert—w z Google, Microsoft, Meta i czo¸owych startup—w.</p>
+</div>
+<!-- Feature 4 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:-rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Spo¸ecznoæ</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Do¸ˆcz do tysi«cy ambitnych student—w na naszych kana¸ach Discord i Slack.</p>
+</div>
+<!-- Feature 5 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Rozw—j osobisty</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Buduj æcieık« kariery dopasowanˆ do Twoich mocnych stron i ambicji.</p>
+</div>
+<!-- Feature 6 -->
+<div class="group p-8 rounded-xl bg-background-light dark:bg-slate-800 border border-transparent hover:border-primary/20 transition-all duration-300 hover:scale-105 hover:-rotate-1 shadow-sm hover:shadow-xl">
+<div class="size-14 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">all_inclusive</span>
+</div>
+<h4 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Nielimitowany dost«p</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">W planach premium otrzymujesz dost«p do wszystkich materia¸—w i aktualizacji 24/7.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20 flex flex-col gap-4">
+<h3 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Wybierz plan</h3>
+<p class="text-slate-600 dark:text-slate-400">Przejrzyste ceny dopasowane do Twojego etapu nauki.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<!-- Free Plan -->
+<div class="bg-white dark:bg-slate-800 p-10 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold">Free</h4>
+<p class="text-slate-500 text-sm">Dla hobbyst—w</p>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black">?0</span>
+<span class="text-slate-500 font-medium">/miesiˆc</span>
+</div>
+<button class="w-full py-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">Wybierz Free</button>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                            Podstawowe kursy
+                        </li>
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                            Dost«p do spo¸ecznoæci
+                        </li>
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 opacity-50">
+<span class="material-symbols-outlined text-slate-300 text-lg">cancel</span>
+                            Reklamy
+                        </li>
+</ul>
+</div>
+<!-- Pro Plan (Highlighted) -->
+<div class="relative bg-white dark:bg-slate-800 p-10 rounded-xl border-2 border-primary shadow-2xl scale-110 z-10 flex flex-col gap-6 transform transition-transform hover:scale-[1.12]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full animate-pulse shadow-lg shadow-primary/40">
+                        Best Value
+                    </div>
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold">Pro</h4>
+<p class="text-slate-500 text-sm">Dla ambitnych profesjonalist—w</p>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-black text-primary">?29</span>
+<span class="text-slate-500 font-medium">/miesiˆc</span>
+</div>
+<button class="w-full py-3.5 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">Zacznij Pro</button>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-center gap-3 text-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Wszystkie kursy
+                        </li>
+<li class="flex items-center gap-3 text-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Certyfikaty ukoÄczenia
+                        </li>
+<li class="flex items-center gap-3 text-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Brak reklam
+                        </li>
+<li class="flex items-center gap-3 text-sm font-semibold">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Priorytetowe wsparcie
+                        </li>
+</ul>
+</div>
+<!-- Enterprise Plan -->
+<div class="bg-white dark:bg-slate-800 p-10 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h4 class="text-xl font-bold">Enterprise</h4>
+<p class="text-slate-500 text-sm">Dla zespo¸—w i firm</p>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-black">Kontakt</span>
+</div>
+<button class="w-full py-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">Skontaktuj si«</button>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                            Zarzˆdzanie zespo¸em
+                        </li>
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                            Analityka post«p—w
+                        </li>
+<li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                            Dedykowany opiekun
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-primary/5 dark:bg-slate-900/40">
+<div class="max-w-7xl mx-auto px-6">
+<h3 class="text-3xl font-black text-center mb-16">Co m—wiˆ nasi studenci</h3>
+<div class="flex overflow-x-auto gap-8 pb-12 snap-x hide-scrollbar no-scrollbar">
+<!-- Testimonial 1 -->
+<div class="min-w-[400px] snap-center bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+<div class="flex gap-1 text-accent mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed">
+                        "Kurs UX Design na EduFlow kompletnie zmieni¸ mojˆ æcieık« zawodowˆ. Mentorzy sˆ niesamowicie pomocni, a materia¸y zawsze aktualne."
+                    </p>
+<div class="flex items-center gap-4">
+<img alt="Anna Kowalska" class="w-12 h-12 rounded-full" data-alt="Close up portrait of a satisfied UX student Anna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD85rqVSxqOuBsPsgY_adwGVtO0p5tKqNX1SdNPRDSN1iEr1ik9T4NQbzB3N7aJ5dABFxjdcxXyhhSxzrVCAfSPDwo9ntEWmu_A5i6reycJ9ybekc9ppKvtsRLCRS9R10Qx7nT7udu2dGPhTCzOOgJhIrgHBMdxGaEDw-K1XOjJBbryxkPqEnyFIdQoQ8ad8wcPjecVIiHfYmCODEo-O-fwj3lETFEP2h0hqUScI7Wqn1-VwZBtq7kRmgVuwOXDAi0dSH-u3N6Hu3N0"/>
+<div>
+<p class="font-bold">Anna Kowalska</p>
+<p class="text-sm text-slate-500">UX Design Student</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[400px] snap-center bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+<div class="flex gap-1 text-accent mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed">
+                        "Platforma jest intuicyjna, a system motywacyjny sprawia, ıe chce si« wraca codziennie. Jako programista doceniam jakoæ kodu w kursach."
+                    </p>
+<div class="flex items-center gap-4">
+<img alt="Jan Nowak" class="w-12 h-12 rounded-full" data-alt="Close up portrait of a satisfied Dev student Jan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgr2ri9IMXDZys1_I3gynZtj4QJGxE9Gm7drS-FdRXjdLfS2wpCd6NbxSqYVEyDd6MqDeAtb9HRiJVAueeJdjrXJzRXEuDTK-NZ6Fz4Z7LOgXOu2yyClFlBxWieSr_YwhYUhghuKvu7CNVZxsJrMCE-c19sIDzv46aK85v58UEF9cDfFEZajle2ZpNHEGBXmKGf3u88_PdndLoHc3e3jNXkbPX9PlwygYhLnrUVTfrZyDOazJhwNhA9gxJzwukdCMqwnESyhKTIitC"/>
+<div>
+<p class="font-bold">Jan Nowak</p>
+<p class="text-sm text-slate-500">Frontend Developer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="min-w-[400px] snap-center bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700">
+<div class="flex gap-1 text-accent mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed">
+                        "Najlepsza inwestycja w m—j rozw—j osobisty w tym roku. Nielimitowany dost«p pozwala mi uczy si« r—ınych dziedzin jednoczeænie."
+                    </p>
+<div class="flex items-center gap-4">
+<img alt="Marta Lis" class="w-12 h-12 rounded-full" data-alt="Portrait of a smiling female digital marketing student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu6VN3ZZp_4jqRY-5WjfqdCTr8rcTii-XWu8BdVNH1tilt6YZkA1eUYdjvCszp0cpk7rmy87ACBujtJ_iMt1gbJS-QPxMuq9IOJbx77d2It-3zSpLS2UkJCDXVNTtLBJ23uQSRdTLLYst5uEsd94f4L2jI8anfVrqwM_5vyunOqP3J6pkDLuw4TFt1Sx1gNhAHKnBqBMD1-xz1_lwt3yJgInR9s5yyCYPpmhO91cJiFgo5WOfmyUZs1Axgx2NvVdy0aNl7gMucqrjR"/>
+<div>
+<p class="font-bold">Marta Lis</p>
+<p class="text-sm text-slate-500">Marketing Specialist</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-footer-dark text-slate-300 py-20">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">auto_stories</span>
+</div>
+<h2 class="text-xl font-black">EduFlow</h2>
+</div>
+<p class="text-sm leading-relaxed text-slate-400">
+                    Edukacja przysz¸oæci dost«pna juı dziæ. Do¸ˆcz do nas i tw—rz swojˆ æcieık« sukcesu.
+                </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="size-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="size-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">video_library</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Produkty</h5>
+<ul class="flex flex-col gap-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Wszystkie kursy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dla firm</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">ZostaÄ mentorem</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ceny</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Firma</h5>
+<ul class="flex flex-col gap-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">O nas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kariera</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kontakt</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Newsletter</h5>
+<p class="text-sm text-slate-400 mb-6">Zapisz si«, aby otrzymywa informacje o nowych kursach.</p>
+<div class="flex gap-2">
+<input class="bg-slate-800 border-none rounded-lg px-4 py-2 text-sm w-full focus:ring-2 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest font-bold">
+<p>© 2024 EDUFLOW INC. WSZYSTKIE PRAWA ZASTRZEûONE.</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">POLITYKA PRYWATNOåCI</a>
+<a class="hover:text-white transition-colors" href="#">REGULAMIN</a>
+</div>
+</div>
+</footer>
+</body></html>
