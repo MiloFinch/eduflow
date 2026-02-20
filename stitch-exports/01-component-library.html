@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduFlow Component Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#6b61ff",
+                "background-light": "#f6f5f8",
+                "background-dark": "#100f23",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F7 100%);
+        }
+        .sidebar-link.active {
+            background-color: #6b61ff20;
+            color: #6b61ff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="font-display text-slate-900 bg-background-light dark:bg-background-dark dark:text-slate-100 min-h-screen">
+<div class="flex">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 hidden lg:block z-50">
+<div class="p-8">
+<div class="flex items-center gap-2 mb-10">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-outlined text-sm">school</span>
+</div>
+<span class="text-xl font-bold tracking-tight">EduFlow</span>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#typography">
+<span class="material-icons-outlined text-slate-400">text_format</span> Typography
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#colors">
+<span class="material-icons-outlined text-slate-400">palette</span> Colors
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#buttons">
+<span class="material-icons-outlined text-slate-400">smart_button</span> Buttons
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#inputs">
+<span class="material-icons-outlined text-slate-400">input</span> Inputs
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#cards">
+<span class="material-icons-outlined text-slate-400">dashboard_customize</span> Cards
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#icons">
+<span class="material-icons-outlined text-slate-400">emoji_symbols</span> Icons
+                    </a>
+</nav>
+</div>
+<div class="absolute bottom-8 left-8 right-8">
+<div class="p-4 bg-primary/10 rounded-xl border border-primary/20">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Version 1.0.4</p>
+<p class="text-xs text-slate-500">Stability: Beta Release</p>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-64 p-8 md:p-12 lg:p-16 space-y-24 max-w-6xl mx-auto">
+<!-- Header Section -->
+<header class="space-y-4">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest">
+                    Design System
+                </div>
+<h1 class="text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">EduFlow Component Library</h1>
+<p class="text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
+                    A comprehensive design language built for modern educational platforms. Clean, accessible, and high-performance components.
+                </p>
+</header>
+<!-- Typography Section -->
+<section class="space-y-8 scroll-mt-12" id="typography">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Typography</h2>
+<p class="text-slate-500">Our primary typeface is Inter, designed for maximum legibility.</p>
+</div>
+<div class="grid gap-8 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Heading 1</span>
+<h1 class="md:col-span-3 text-4xl font-extrabold">The quick brown fox jumps over the lazy dog</h1>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Heading 2</span>
+<h2 class="md:col-span-3 text-3xl font-bold">The quick brown fox jumps over the lazy dog</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Heading 3</span>
+<h3 class="md:col-span-3 text-2xl font-semibold">The quick brown fox jumps over the lazy dog</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Heading 4</span>
+<h4 class="md:col-span-3 text-xl font-semibold">The quick brown fox jumps over the lazy dog</h4>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 items-start gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Body Text</span>
+<p class="md:col-span-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Educators and students require clear, readable interfaces. Body text uses 16px Inter for optimal reading on desktop and mobile screens alike. This ensures that long-form learning material is comfortable for the eyes.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 items-center gap-4">
+<span class="text-slate-400 text-sm font-mono uppercase">Small Text</span>
+<p class="md:col-span-3 text-sm text-slate-500">Fine print for metadata, dates, and auxiliary information.</p>
+</div>
+</div>
+</section>
+<!-- Color Palette Section -->
+<section class="space-y-8 scroll-mt-12" id="colors">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Color Palette</h2>
+<p class="text-slate-500">Semantic and brand colors derived from our primary hue.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<!-- Primary -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-primary rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">#6B61FF</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter">Primary</p>
+</div>
+<!-- Secondary -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-[#4ECDC4] rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">#4ECDC4</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter">Secondary</p>
+</div>
+<!-- Accent -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-[#FF6B9D] rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">#FF6B9D</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter">Accent</p>
+</div>
+<!-- Success -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-emerald-500 rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Success</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter text-emerald-600">Success</p>
+</div>
+<!-- Warning -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-amber-400 rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Warning</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter text-amber-600">Warning</p>
+</div>
+<!-- Error -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-rose-500 rounded-lg shadow-inner flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Error</span>
+</div>
+<p class="text-xs font-bold px-1 uppercase tracking-tighter text-rose-600">Error</p>
+</div>
+<!-- Grays -->
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-slate-900 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Slate 900</span>
+</div>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-slate-700 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Slate 700</span>
+</div>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-slate-500 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Slate 500</span>
+</div>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-slate-300 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-white text-[10px] font-bold">Slate 300</span>
+</div>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-slate-100 border border-slate-200 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-slate-600 text-[10px] font-bold">Slate 100</span>
+</div>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="h-24 bg-white border border-slate-200 rounded-lg flex items-end p-3 transition-transform group-hover:scale-105">
+<span class="text-slate-400 text-[10px] font-bold">White</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Buttons Section -->
+<section class="space-y-8 scroll-mt-12" id="buttons">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Buttons</h2>
+<p class="text-slate-500">Interactive elements for primary actions and navigation.</p>
+</div>
+<div class="flex flex-wrap items-center gap-6 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20">Primary</button>
+<button class="bg-[#4ECDC4] hover:bg-[#4ECDC4]/90 text-white px-6 py-2.5 rounded-lg font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-[#4ECDC4]/20">Secondary</button>
+<button class="border-2 border-slate-200 dark:border-slate-700 hover:border-primary text-slate-700 dark:text-slate-300 hover:text-primary px-6 py-2.5 rounded-lg font-semibold transition-all">Outline</button>
+<button class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-6 py-2.5 rounded-lg font-semibold transition-all">Ghost</button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-400 px-6 py-2.5 rounded-lg font-semibold cursor-not-allowed" disabled="">Disabled</button>
+</div>
+</section>
+<!-- Inputs Section -->
+<section class="space-y-8 scroll-mt-12" id="inputs">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Inputs &amp; Forms</h2>
+<p class="text-slate-500">Standard form controls for data entry and configuration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name</label>
+<input class="w-full border-slate-200 dark:border-slate-700 bg-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all p-3" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+<input class="w-full border-slate-200 dark:border-slate-700 bg-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all p-3" placeholder="john@eduflow.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Password</label>
+<div class="relative">
+<input class="w-full border-slate-200 dark:border-slate-700 bg-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all p-3 pr-10" type="password" value="secret123"/>
+<span class="material-icons-outlined absolute right-3 top-3 text-slate-400 cursor-pointer hover:text-primary">visibility_off</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Bio</label>
+<textarea class="w-full border-slate-200 dark:border-slate-700 bg-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all p-3" placeholder="Tell us about yourself..." rows="4"></textarea>
+</div>
+</div>
+</section>
+<!-- Cards Section -->
+<section class="space-y-8 scroll-mt-12" id="cards">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Cards</h2>
+<p class="text-slate-500">Component containers for groupings of related information.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+<span class="material-icons-outlined">auto_stories</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Basic Card</h4>
+<p class="text-slate-500 text-sm leading-relaxed">A clean container for static information with a subtle border and shadow.</p>
+</div>
+<!-- Hoverable Card -->
+<div class="group bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm transition-all hover:scale-105 hover:shadow-xl hover:-rotate-1 cursor-pointer">
+<div class="w-12 h-12 bg-[#4ECDC4]/10 rounded-lg flex items-center justify-center text-[#4ECDC4] mb-4 group-hover:bg-[#4ECDC4] group-hover:text-white transition-colors">
+<span class="material-icons-outlined">trending_up</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Interactive Card</h4>
+<p class="text-slate-500 text-sm leading-relaxed">This card reacts to user interaction with scaling and slight rotation effects.</p>
+</div>
+<!-- Clickable Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="h-32 bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Student studying with headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApxo1cWm9bcoLnMmjVoyqBI_kIOE1EbpwVqByIeuAj8eraBjjypUG5oYP4uW8nUa7rBgzYmRF_4fzLOH5NOcj2-8u6433Gwd8imPOPG-qJc6VO_vwigLYjAlAYZAQMKzT9BqRcUsyHEol42P3cS1SfUKH5iznJpIyO4qtgOWtgKgHHUdrreW0sniSlj0CQ9uvtVxydkIIWTDyP22bIw47BSxPlPx1E3TNrpyG1jCkgSwjFgtTQ5M_6qhnDXle15yynBIkqWVhJTFs"/>
+</div>
+<div class="p-6 space-y-4">
+<div>
+<h4 class="font-bold">Advanced UI Design</h4>
+<p class="text-xs text-slate-400">12 Modules ¥ 4 Hours</p>
+</div>
+<button class="w-full bg-primary text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">Enroll Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Icons Section -->
+<section class="space-y-8 scroll-mt-12 pb-24" id="icons">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+<h2 class="text-3xl font-bold">Iconography</h2>
+<p class="text-slate-500">A consistent set of stroke icons for navigational visual cues.</p>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-10 border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-10 gap-8">
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] text-slate-400 font-mono">home</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[10px] text-slate-400 font-mono">dash</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">search</span>
+<span class="text-[10px] text-slate-400 font-mono">search</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">notifications</span>
+<span class="text-[10px] text-slate-400 font-mono">bell</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-[10px] text-slate-400 font-mono">gear</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] text-slate-400 font-mono">user</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">mail</span>
+<span class="text-[10px] text-slate-400 font-mono">mail</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">calendar_today</span>
+<span class="text-[10px] text-slate-400 font-mono">date</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">assignment</span>
+<span class="text-[10px] text-slate-400 font-mono">task</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">chat_bubble_outline</span>
+<span class="text-[10px] text-slate-400 font-mono">chat</span>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">chevron_right</span>
+<span class="text-[10px] text-slate-400 font-mono">next</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">star_outline</span>
+<span class="text-[10px] text-slate-400 font-mono">fav</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">cloud_upload</span>
+<span class="text-[10px] text-slate-400 font-mono">upload</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">lock</span>
+<span class="text-[10px] text-slate-400 font-mono">lock</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">more_horiz</span>
+<span class="text-[10px] text-slate-400 font-mono">more</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">logout</span>
+<span class="text-[10px] text-slate-400 font-mono">exit</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">help_outline</span>
+<span class="text-[10px] text-slate-400 font-mono">help</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="text-[10px] text-slate-400 font-mono">cart</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">attachment</span>
+<span class="text-[10px] text-slate-400 font-mono">file</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-icons-outlined text-slate-400 group-hover:text-primary transition-colors">share</span>
+<span class="text-[10px] text-slate-400 font-mono">share</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Scroll to Top Button (Hidden on small) -->
+<a class="fixed bottom-8 right-8 w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center shadow-lg text-primary hover:bg-slate-50 dark:hover:bg-slate-700 transition-all z-40 hidden md:flex" href="#">
+<span class="material-icons-outlined">arrow_upward</span>
+</a>
+</body></html>
