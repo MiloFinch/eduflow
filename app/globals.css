@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #6C63FF;
+    --secondary: #4ECDC4;
+    --accent: #FF6B9D;
+    --neutral-900: #2D3748;
+    --neutral-700: #4A5568;
+    --neutral-500: #A0AEC0;
+    --neutral-300: #CBD5E0;
+    --neutral-100: #EDF2F7;
+  }
+  
+  body {
+    @apply font-sans text-neutral-700 bg-neutral-50;
+  }
+  
+  h1 {
+    @apply text-5xl font-bold text-neutral-900 leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl font-bold text-neutral-900 leading-snug;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold text-neutral-900 leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl font-semibold text-neutral-900 leading-snug;
+  }
+}
