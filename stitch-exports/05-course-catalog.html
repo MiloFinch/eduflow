@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pl"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduFlow - Katalog Kursów</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6961ff",
+              "background-light": "#f5f5f8",
+              "background-dark": "#100f23",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .course-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px -10px rgba(105, 97, 255, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo & Search -->
+          <div class="flex items-center gap-8 flex-1">
+            <div class="flex items-center gap-2 text-primary">
+              <span class="material-symbols-outlined text-3xl font-bold">school</span>
+              <h2 class="text-slate-900 dark:text-white text-xl font-black tracking-tight">EduFlow</h2>
+            </div>
+            <div class="hidden md:flex flex-1 max-w-md">
+              <div class="relative w-full">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+                <input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Szukaj kursów, ścieżek..." type="text"/>
+              </div>
+            </div>
+          </div>
+          <!-- Right Menu -->
+          <div class="flex items-center gap-6">
+            <nav class="hidden lg:flex items-center gap-6">
+              <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Moje Kursy</a>
+              <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Mentorzy</a>
+              <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Forum</a>
+            </nav>
+            <div class="flex items-center gap-4">
+              <button class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors relative">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+              </button>
+              <div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary/20" data-alt="User profile avatar male smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs6SK76kdWmPZszRFGQJGZsViIcwGfUEvd1XiMZDwfDAyzOWwto5gIvIp0UuriUo6Y_QdSHwi8Dri5AThKjy1NVwTh8arLwja0emhQenS3d5SWQ1zjBW6uhoG8GrSvdHbbxxwGLydN7PHYLs6w1ksAkUoxTXRAB6u9XL8Hh-v1KWPY4LTKRXcqgwLYuwYayN-jV7WjNrzOnX32mNzUaPL2uhw7k9WxFzDJa9hu5RyaiHRDo-7B01d8yGquyv78f--hCPfYqR7vWfax')"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Breadcrumbs & Hero -->
+      <nav class="flex items-center gap-2 text-sm text-slate-500 mb-4">
+        <a class="hover:text-primary" href="#">Home</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <span class="text-slate-900 dark:text-white font-medium">Katalog</span>
+      </nav>
+
+      <div class="mb-10">
+        <h1 class="text-4xl font-black text-slate-900 dark:text-white mb-2 tracking-tight">Katalog Kursów</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-lg">Znajdź idealny kurs — ponad 1,200 kursów od ekspertów</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <button class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary transition-all">
+          <span class="text-sm font-semibold">Kategoria</span>
+          <span class="material-symbols-outlined text-slate-400">expand_more</span>
+        </button>
+        <button class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary transition-all">
+          <span class="text-sm font-semibold">Poziom</span>
+          <span class="material-symbols-outlined text-slate-400">expand_more</span>
+        </button>
+        <button class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary transition-all">
+          <span class="text-sm font-semibold">Cena</span>
+          <span class="material-symbols-outlined text-slate-400">expand_more</span>
+        </button>
+        <button class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary transition-all">
+          <span class="text-sm font-semibold">Język</span>
+          <span class="material-symbols-outlined text-slate-400">expand_more</span>
+        </button>
+        <button class="text-primary text-sm font-bold ml-2 hover:underline">Wyczyść filtry</button>
+      </div>
+
+      <!-- Results Toolbar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-4">
+          <div class="relative w-full md:w-80">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+            <input class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Szukaj po nazwie..." type="text"/>
+          </div>
+          <p class="text-sm text-slate-500 whitespace-nowrap">Znaleziono <span class="text-slate-900 dark:text-white font-bold">48 kursów</span></p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-slate-500">Sortuj:</span>
+          <select class="bg-transparent border-none text-sm font-bold text-slate-900 dark:text-white focus:ring-0 cursor-pointer">
+            <option>Najpopularniejsze</option>
+            <option>Najnowsze</option>
+            <option>Cena: rosnąco</option>
+            <option>Ocena: najwyższa</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Course Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Card 1 (Bestseller) -->
+        <div class="course-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 transition-all duration-300">
+          <div class="relative aspect-video">
+            <img class="w-full h-full object-cover" data-alt="Coding screen with colorful syntax highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJC41CoKUc5zVojyB2VPOCu8S_mDGh-tXzN5iRUITjyPswEhF0wOMYWp2Om0mYAki-Jydq8OlIiTJPSm6wbKl1OjyjNV6TUpmqBTwX-8XIeuG9_WMwBRC_Wt_6DNrUeUC5NSjxKmz8xT2CS0w_dMQyTdDw7LrErdSrx7sgE4OWibo-f2bG0jFlHfwHFBpkCbBiQtOff1O95GH86kSl56gTC8iP-o5YSEcczV2kd7_B48UDv_235fSNHfBSBc1dfwioKeZAPwE2aLgL"/>
+            <div class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Bestseller</div>
+            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <div class="p-5">
+            <span class="text-primary text-[11px] font-bold uppercase tracking-widest mb-2 block">Frontend Development</span>
+            <h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-3 line-clamp-2">React 18 &amp; Next.js: Kompletny Przewodnik 2024</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-6 h-6 rounded-full bg-cover" data-alt="Professional instructor portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNFzA4A-uOgYLuJEdsGI6IYhi5ZxDBe3W3QzdcIKq2lr0b_g2cVZtX5Ff-40xg8Ii-r0iu1PKgR7Nu4npvw-_bkOh0byXSiBj2kKilyTJdXT0bF8pnQRQxUjaI1yuwnCaabrVfmlxrc_iXEFzfM1DQ_ZhnSnkUfnrkHxlFvNnNVF60fanuQN3hVfioQQHP9R55iWgHao_TC3yIZQxxu84n73bprCi5GNLozOC7aGmm4LIk4S1UHEbDqvh6HfDrnamQ0Uqlf8lP16LX')"></div>
+              <span class="text-xs text-slate-500">Adam Nowak</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="font-bold text-slate-900 dark:text-white">4.9</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">group</span>
+                <span>2.4k</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                <span>24h</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-xl font-black text-slate-900 dark:text-white whitespace-nowrap">149 zł</span>
+              <button class="w-full py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors">Zobacz kurs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 (New) -->
+        <div class="course-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 transition-all duration-300">
+          <div class="relative aspect-video">
+            <img class="w-full h-full object-cover" data-alt="UI/UX design workspace with colorful wires" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKqw2YpK0Q2FGA5BOwzVUYtxIDjryvneq5oCLbmvk2dcPo7N5XzXvUtyKufWUle7E6h1moNRTTBBdIhaChlBvaaaIcP9FGPO7BVkTPtyq9ExUReeEKRLqeZOBGYY_Ji8HUmVO9kumdM7ACGQZ78K97oD6AMwx-E0a1vuNiPT4LvR5W4z5gOYzYYrbrqP0P9b0SQbTboLOHYpcn7Joq0BU6GNa7K53SYVT1MCdJfK26HsGCcwAyDl8c8gXkqI8KCB8_miT7TJi2MAW-"/>
+            <div class="absolute top-3 left-3 bg-green-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Nowy</div>
+          </div>
+          <div class="p-5">
+            <span class="text-primary text-[11px] font-bold uppercase tracking-widest mb-2 block">UI/UX Design</span>
+            <h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-3 line-clamp-2">Projektowanie systemów designu w Figma</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-6 h-6 rounded-full bg-cover" data-alt="Female designer headshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtwK8PprXkmx21iuuXkVNTxPr9bY9onXCVrMWJ0Xkg1mnQ5F4cMlY53oOuHHmuZlcy9Ge42KjJKtfktXcPHHrTYqKYlzfydh_M09gD21U6i09wuRwlP4VsXZMoZQkEA5uaqIA6OeAZb3y0zeTirU5iAXmt0o4lTJjerl52vG_SkZ6aj1jgavLOGt6EAdhMqy_-RIifyj1pdnXMCu3sOoNI5QIHfbm8h50kv83RaOZbvxADzLZ_60-IboEgzxkFftk8mxR5dyW4-lf5')"></div>
+              <span class="text-xs text-slate-500">Marta Kowalska</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="font-bold text-slate-900 dark:text-white">4.8</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">group</span>
+                <span>850</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                <span>12h</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-xl font-black text-slate-900 dark:text-white">199 zł</span>
+              <button class="w-full py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors">Zobacz kurs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 (Free) -->
+        <div class="course-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 transition-all duration-300">
+          <div class="relative aspect-video">
+            <img class="w-full h-full object-cover" data-alt="JavaScript code on a monitor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOefk5qtpGnv3msI3XNovwNvDI6eyJUkN_eNAtqcQzTx6jhxb0R0V7MhBovmr9OskeMyFRHpi4syjMm_b-0xMu7PyYkVBAgyOhkzXPVp7ocFAEUFvLYKUyGvmHBYsOv1wFs5wfWj5z3lA3mSpKjKXbw9XAr9J-0wfBMz25CXm6xoBMImchbjZXxxlDgj12erxMxIHPf8IHRTLlMbCYE9BY_CCgeTaarOsNWTo2TqUe8vBfqlBGuckjbQ-X1W9Yt5WJBvBjaeQoMzON"/>
+            <div class="absolute top-3 left-3 bg-blue-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Darmowy</div>
+          </div>
+          <div class="p-5">
+            <span class="text-primary text-[11px] font-bold uppercase tracking-widest mb-2 block">Programowanie</span>
+            <h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-3 line-clamp-2">Wprowadzenie do JavaScript ES6+</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-6 h-6 rounded-full bg-cover" data-alt="Developer portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwey9yYeoNCVANTPY2h6qn-Q7MtpbM3TYqZg2BLmFHvO5hxmW1sGYas2xuf1OA1HNuwHFJcSsiyMBP-UsgwHQ8brtH8NxHXdALXLuGDqfDefDgsBVdg3RwPU_qIzC6Cx5UiWrNpxknH4QIaqwvPvXYZrYvF_8RLawHCuGCSMuxs6ZM9e86PsvPZgGz6iXGDBCR29JjaBVNZxfkU5yeT-LSOHCIos3z-CqF6J092GwTvo7e-ng3CSMnYAOxX_DAUylT1ynqPXrGfB56')"></div>
+              <span class="text-xs text-slate-500">Piotr Zieliński</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="font-bold text-slate-900 dark:text-white">4.7</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">group</span>
+                <span>15k</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                <span>4h</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-xl font-black text-primary uppercase">Free</span>
+              <button class="w-full py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors">Zobacz kurs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 (Bestseller) -->
+        <div class="course-card group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 transition-all duration-300">
+          <div class="relative aspect-video">
+            <img class="w-full h-full object-cover" data-alt="Data analysis charts on dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbY2u2znb_8x7OknFgPsVhuTi7ZCfFafMap4c7L3ZMkNDpPd3SmH-zK3EPFonSh1_EgEXFjj55uccBkAQU5Qi5Is8UmK-NpyWhkP4O4Cy50H76JdlsKchxgJLwJ4apKUA4j9Icsflb4W3OMgaHGbPdYkWjMLKXaYkKlw4vVXgY0VN5nC9zVIIGPiXLcxkqG4ZvM1TcKLb6wRfOkJFmTv4ZLjeV1emauzXI2oKplml_R1M8dEeIQ37hccXKuxDkvhoqP0Bbq9-uFdUW"/>
+            <div class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-black px-2 py-1 rounded uppercase tracking-wider">Bestseller</div>
+          </div>
+          <div class="p-5">
+            <span class="text-primary text-[11px] font-bold uppercase tracking-widest mb-2 block">Data Science</span>
+            <h3 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-3 line-clamp-2">Python dla Analizy Danych od Podstaw</h3>
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-6 h-6 rounded-full bg-cover" data-alt="Expert analyst portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbjXPBIouUPj5maF5VrHOu-fw68XOpFFkpjMcy6SJ4OXvfXlA788-Fyv6nc3BVxDxuiCkHh_esax5T2oMu8ih2U7fZ0r-vAJcjwNMsoHfeilaVOTE9hEGlOQ5qe5jM42H7xvhWmxzLxJuquDktuBNTMfmGPuPHwKJLSJS1_fhMrN3M85PK3B1rjq5rssZirLjA945mLRU1WACYf--web7l_mCBPSo9bszlBLOU5PVAmh_Gl60fH_Ls8SS9OSqATiCwsNnkzDxxIXPY')"></div>
+              <span class="text-xs text-slate-500">Krzysztof Król</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="font-bold text-slate-900 dark:text-white">4.9</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">group</span>
+                <span>5.2k</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                <span>30h</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-xl font-black text-slate-900 dark:text-white">129 zł</span>
+              <button class="w-full py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary/90 transition-colors">Zobacz kurs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat 8 more placeholder cards for the 12-card grid -->
+        <!-- Note: Reusing templates for demonstration -->
+        <!-- ... -->
+        <script>
+          // Generate 8 more cards to fulfill the requirement of 12
+          const grid = document.querySelector('.grid');
+          const templates = grid.innerHTML;
+          grid.innerHTML += templates + templates; // This makes 12 cards (4 original * 3)
+        </script>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex items-center justify-center gap-2 pb-16">
+        <button class="flex items-center gap-1 px-4 py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors">
+          <span class="material-symbols-outlined">chevron_left</span>
+          Wstecz
+        </button>
+        <div class="flex items-center gap-1">
+          <button class="w-10 h-10 rounded-xl bg-primary text-white font-bold text-sm">1</button>
+          <button class="w-10 h-10 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-sm transition-colors">2</button>
+          <button class="w-10 h-10 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-sm transition-colors">3</button>
+          <span class="px-2 text-slate-400">...</span>
+          <button class="w-10 h-10 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-sm transition-colors">10</button>
+        </div>
+        <button class="flex items-center gap-1 px-4 py-2 text-sm font-bold text-slate-500 hover:text-primary transition-colors">
+          Dalej
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 py-10">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="flex items-center justify-center gap-2 text-primary mb-4">
+          <span class="material-symbols-outlined text-2xl font-bold">school</span>
+          <h2 class="text-slate-900 dark:text-white text-lg font-black tracking-tight">EduFlow</h2>
+        </div>
+        <p class="text-slate-500 text-sm">© 2024 EduFlow E-learning Platform. Wszystkie prawa zastrzeżone.</p>
+      </div>
+    </footer>
+  </body></html>
