@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="light" lang="pl"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduFlow - Zaloguj się</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6961ff",
+              "background-light": "#f5f5f8",
+              "background-dark": "#100f23",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "2xl": "2rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .bg-gradient-custom {
+        background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+      }
+      .hover-lift {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px -5px rgba(105, 97, 255, 0.4);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark min-h-screen font-display">
+    <!-- Main Background Wrapper -->
+    <div class="bg-gradient-custom min-h-screen w-full flex items-center justify-center p-6 relative overflow-hidden">
+      <!-- Decorative Elements -->
+      <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-3xl"></div>
+
+      <!-- Login Container -->
+      <div class="glass-card w-full max-w-[480px] rounded-2xl shadow-2xl p-8 md:p-12 relative z-10">
+        <!-- Logo Section -->
+        <div class="flex flex-col items-center mb-8">
+          <div class="bg-primary p-3 rounded-xl mb-4 shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_6_319)">
+                <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+              </g>
+              <defs>
+                <clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+              </defs>
+            </svg>
+          </div>
+          <h2 class="text-slate-900 dark:text-slate-100 text-3xl font-bold tracking-tight">Zaloguj się</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-2 text-center">Witaj z powrotem w EduFlow! Kontynuuj swoją naukę.</p>
+        </div>
+
+        <!-- Form Section -->
+        <form class="space-y-6">
+          <!-- Email Input -->
+          <div>
+            <label class="block text-slate-700 dark:text-slate-200 text-sm font-semibold mb-2" for="email">
+              Email
+            </label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+              <input class="w-full pl-12 pr-4 py-4 bg-white/50 border border-[#CBD5E0] rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="email" placeholder="twoj@email.com" type="email"/>
+            </div>
+          </div>
+
+          <!-- Password Input -->
+          <div>
+            <label class="block text-slate-700 dark:text-slate-200 text-sm font-semibold mb-2" for="password">
+              Hasło
+            </label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+              <input class="w-full pl-12 pr-12 py-4 bg-white/50 border border-[#CBD5E0] rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="password" placeholder="••••••••" type="password"/>
+              <button class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors" type="button">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember & Forgot -->
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center cursor-pointer group">
+              <div class="relative">
+                <input class="sr-only peer" type="checkbox"/>
+                <div class="w-5 h-5 bg-white/50 border border-[#CBD5E0] rounded peer-checked:bg-primary peer-checked:border-primary transition-all"></div>
+                <span class="material-symbols-outlined absolute inset-0 text-white text-[16px] flex items-center justify-center opacity-0 peer-checked:opacity-100">check</span>
+              </div>
+              <span class="ml-2 text-slate-600 dark:text-slate-300 font-medium">Zapamiętaj mnie</span>
+            </label>
+            <a class="text-primary font-semibold hover:underline" href="#">Zapomniałeś hasła?</a>
+          </div>
+
+          <!-- Login Button -->
+          <button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover-lift shadow-lg transition-all text-lg" type="submit">
+            Zaloguj się
+          </button>
+        </form>
+
+        <!-- Social Login Divider -->
+        <div class="relative my-8">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-slate-300/50"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-4 bg-transparent text-slate-500 font-medium uppercase tracking-wider bg-white/20 backdrop-blur-sm rounded-full">lub</span>
+          </div>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="grid grid-cols-3 gap-4">
+          <button aria-label="Zaloguj przez Google" class="flex items-center justify-center p-3 bg-white/50 border border-[#CBD5E0] rounded-xl hover:bg-white transition-colors hover-lift">
+            <img alt="" class="w-6 h-6" data-alt="Google colorful icon logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-yB6LCUn_Wjlo4FbclgwwVq0S4HMriB3S5CcLmaQGMr5GhWJncZyo2y1OEWuIXrhOh3MIt25BJc-docYcBwjmv4BHh0SqMWnh4Mx-H41PBsgdvEkNl5BysFayyTszU5uiUXj4lOzi0G3nsZSpWu0X7l4Kxi7ltKh6QvgKif3MVHzX0eR-AR8sijI46SV7NORdy53HJ6VupszrcGgB5WzKeQhFi5lXg29jUs7ODBmPDyXkRsgme-0EjVC-J1446HyQ9j24_zSiVRd4"/>
+          </button>
+          <button aria-label="Zaloguj przez Facebook" class="flex items-center justify-center p-3 bg-white/50 border border-[#CBD5E0] rounded-xl hover:bg-white transition-colors hover-lift">
+            <svg class="w-6 h-6 text-[#1877F2]" fill="currentColor" viewbox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+            </svg>
+          </button>
+          <button aria-label="Zaloguj przez LinkedIn" class="flex items-center justify-center p-3 bg-white/50 border border-[#CBD5E0] rounded-xl hover:bg-white transition-colors hover-lift">
+            <svg class="w-6 h-6 text-[#0A66C2]" fill="currentColor" viewbox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="mt-10 text-center">
+          <p class="text-slate-600 dark:text-slate-300 text-sm font-medium">
+            Nie masz jeszcze konta?
+            <a class="text-primary font-bold hover:underline ml-1" href="#">Zarejestruj się</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Background Image for depth (visual only) -->
+      <div class="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
+        <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay" data-alt="Abstract education concept background with subtle lights"></div>
+      </div>
+    </div>
+  </body></html>
