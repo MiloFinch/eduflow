@@ -1,0 +1,279 @@
+<!-- EduFlow Login Screen -->
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduFlow Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#6b61ff",
+                "background-light": "#f6f5f8",
+                "background-dark": "#100f23",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased">
+<!-- Main Background Wrapper -->
+<div class="relative min-h-screen w-full flex items-center justify-center vibrant-gradient p-6 overflow-hidden">
+<!-- Decorative blobs for enhanced depth -->
+<div class="absolute top-[-10%] left-[-10%] w-64 h-64 bg-white/20 rounded-full blur-3xl"></div>
+<div class="absolute bottom-[-5%] right-[-5%] w-80 h-80 bg-primary/30 rounded-full blur-3xl"></div>
+<!-- Glassmorphic Login Card -->
+<div class="glass-card w-full max-w-[440px] rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col items-center">
+<!-- Logo Section -->
+<div class="mb-8 flex flex-col items-center">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg mb-4">
+<span class="material-symbols-outlined text-white text-4xl">auto_stories</span>
+</div>
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">EduFlow</h1>
+</div>
+<!-- Title Section -->
+<div class="w-full mb-8">
+<h2 class="text-3xl font-bold text-slate-900 leading-tight mb-2">Zaloguj si«</h2>
+<p class="text-slate-600 text-base">Witaj ponownie! Kontynuuj swojˆ nauk«.</p>
+</div>
+<!-- Form -->
+<form class="w-full space-y-5" onsubmit="event.preventDefault();">
+<!-- Email Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 ml-1">E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+<input class="w-full pl-12 pr-4 py-3.5 bg-white/50 border border-[#CBD5E0] rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-slate-900 placeholder:text-slate-400" placeholder="Tw—j adres e-mail" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 ml-1">Has¸o</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+<input class="w-full pl-12 pr-12 py-3.5 bg-white/50 border border-[#CBD5E0] rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-slate-900 placeholder:text-slate-400" placeholder="Twoje has¸o" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utilities: Remember & Forgot -->
+<div class="flex items-center justify-between py-1">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-5 h-5 rounded border-[#CBD5E0] text-primary focus:ring-primary/50 transition-all cursor-pointer" type="checkbox"/>
+<span class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">Zapami«taj</span>
+</label>
+<a class="text-sm font-semibold text-primary hover:underline underline-offset-4" href="#">Zapomnia¸eæ?</a>
+</div>
+<!-- Primary Login Button -->
+<button class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/30 hover:bg-primary/90 hover:-translate-y-0.5 active:translate-y-0 transition-all text-lg mt-2" type="submit">
+                    Zaloguj si«
+                </button>
+</form>
+<!-- Divider -->
+<div class="w-full flex items-center gap-4 my-8">
+<div class="h-[1px] flex-1 bg-slate-300"></div>
+<span class="text-xs font-bold text-slate-400 uppercase tracking-widest">lub</span>
+<div class="h-[1px] flex-1 bg-slate-300"></div>
+</div>
+<!-- Social Logins -->
+<div class="flex gap-4 w-full justify-center mb-8">
+<button class="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
+<img alt="Google" class="w-6 h-6" data-alt="Google logo with vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMAk-jsXCuOkXcM5bO4huwd0MZBIiEfxojORyBjnFuu2F6PmqVDYGadVwoCD2yE928Hl4D__BpEYSV-spz3RKmsUixMeSjJICX3PtRMJLUsobCtSZ12GTh7NuvGjZ1N3yYTwY7ddQbXCIwG9XdHI7gu3t0rkUhuZPfQo90dvAECCdp0YQ5SEBpC6REPAsHSVkRjdGqRU5q-dIPeeKerjL9F_5bwfDjIOqxINrmk9b_VtVH3-JK0ZVJqLfGeY8Tlbkvy7H3Hlr9lWKr"/>
+</button>
+<button class="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
+<img alt="Facebook" class="w-6 h-6" data-alt="Facebook brand icon in blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPXvjNUqxJGsILxk3nXN2OoFuTuPLVHMk1g-a-G_BGOFdJrR84u5cW7At-qF5jgb9Wduw6HaryrQU4pkt7mHJ_W49MMVk05PJre2yUGooeLZ4z1Nl4QtuezlfPMcqhlX3HCm_-_eg9vdKXIIVskn-fxesczBmveMrHpAy8YjrZ9JSqsQvaxI6U5MyThzHj6r8noJlIf3xhawt3EFm3---aORNl2m5oa9vg3hrLZDT6wm0aSG6A75C_a-OAPHeyT9J21jZwf2VzLzCS"/>
+</button>
+<button class="w-14 h-14 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/30 transition-all">
+<img alt="LinkedIn" class="w-6 h-6" data-alt="LinkedIn professional networking logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB02GcolVDWLc7J1zXZzW1k51vgQ6wX1o8g579pbWsHYn4OnqNoYuMJJh_eXgHA1C9wwcAcdsiBYy84wW2J0JlPy4kN6HiMreHYlVxzipEObdKFtwMpvtV-cNnzekluuYqDNDxgspARuLxFJqWYsXJmMCVQaIKVLy8SJUWtXeBrUGvTfhzq60vBKtfzdvnTKbUFYmEYBG0PSEFU_zGcj8J-xjWklwmOxtxbhiDNCrvAqXfjSp_XldOKRzFxZNGID8-YkAEKmCmz5YXH"/>
+</button>
+</div>
+<!-- Footer -->
+<p class="text-slate-600 text-sm">
+                Nie masz konta? 
+                <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Zarejestruj si«</a>
+</p>
+</div>
+</div>
+</body></html>
+
+<!-- EduFlow Register Screen -->
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6b61ff",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#100f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .vibrant-bg {
+            background: linear-gradient(135deg, #6C63FF 0%, #4ECDC4 100%);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Background Layer -->
+<div class="fixed inset-0 vibrant-bg z-0"></div>
+<!-- Main Container -->
+<div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-6 sm:p-12 overflow-y-auto">
+<!-- Registration Card -->
+<div class="glass-card w-full max-w-md rounded-xl shadow-xl p-8 md:p-12 flex flex-col gap-6 my-8">
+<!-- Logo & Header -->
+<div class="flex flex-col items-center text-center gap-2">
+<div class="bg-primary size-14 rounded-xl flex items-center justify-center text-white shadow-lg mb-2">
+<span class="material-symbols-outlined !text-3xl">school</span>
+</div>
+<h2 class="text-slate-900 text-3xl font-bold tracking-tight">Utw—rz konto</h2>
+<p class="text-slate-600 text-sm">Do¸ˆcz do naszej spo¸ecznoæci i zacznij nauk«.</p>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-4" onsubmit="return false;">
+<!-- Name Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 text-sm font-semibold px-1">Imi« i Nazwisko</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/50 border border-white/80 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="Jan Kowalski" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 text-sm font-semibold px-1">Adres E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/50 border border-white/80 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="przyklad@edu.pl" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 text-sm font-semibold px-1">Has¸o</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">lock</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/50 border border-white/80 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="¥¥¥¥¥¥¥¥" type="password"/>
+</div>
+<!-- Strength Indicator -->
+<div class="flex gap-1 mt-1 px-1">
+<div class="h-1 flex-1 rounded-full bg-primary"></div>
+<div class="h-1 flex-1 rounded-full bg-primary"></div>
+<div class="h-1 flex-1 rounded-full bg-slate-300/50"></div>
+<div class="h-1 flex-1 rounded-full bg-slate-300/50"></div>
+</div>
+<span class="text-[10px] text-slate-500 font-medium px-1 uppercase tracking-wider">årednie bezpieczeÄstwo</span>
+</div>
+<!-- Confirm Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 text-sm font-semibold px-1">Powt—rz Has¸o</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">lock_reset</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/50 border border-white/80 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-slate-400" placeholder="¥¥¥¥¥¥¥¥" type="password"/>
+</div>
+</div>
+<!-- RODO Checkbox -->
+<div class="flex items-start gap-3 px-1 mt-2">
+<input class="mt-1 size-4 rounded border-slate-300 text-primary focus:ring-primary" id="rodo" type="checkbox"/>
+<label class="text-xs text-slate-600 leading-relaxed" for="rodo">
+                        Akceptuj« <a class="text-primary font-semibold hover:underline" href="#">Regulamin</a> i <a class="text-primary font-semibold hover:underline" href="#">Polityk« Prywatnoæci</a> EduFlow.
+                    </label>
+</div>
+<!-- Primary Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/30 transition-all active:scale-[0.98] mt-4" type="submit">
+                    Utw—rz konto
+                </button>
+</form>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-slate-300/50"></div>
+<span class="flex-shrink mx-4 text-slate-400 text-sm font-medium">lub</span>
+<div class="flex-grow border-t border-slate-300/50"></div>
+</div>
+<!-- Social Logins -->
+<div class="flex justify-center gap-4">
+<button class="size-12 flex items-center justify-center bg-white/60 border border-white/80 rounded-lg hover:bg-white transition-colors group">
+<img alt="" class="size-6" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdHjctWbwKEGqnhsWVojjq86NRc9NmOxwRqQem8o2DyAV2P7MiqDJViff2L48hlxU_gV9MAI5DPe072LY6bDwLHEZ0-vw3NseWOZUdBg2NodsdcdSXthn_imsoF-d1nHFEWGfdKxRrUSy1k2eCzT00RF4pCwzE03SScUukdK_QPaQP7P6zsndIwUqtsoG21N9VcKrlYzr5w1779a0aEV5JTOB2yzoqNWrj58Ph3byX7sYAXIRChPSAMXvUMXhp0vsySf3FG9fHEnHL"/>
+</button>
+<button class="size-12 flex items-center justify-center bg-white/60 border border-white/80 rounded-lg hover:bg-white transition-colors group">
+<img alt="" class="size-6" data-alt="Facebook logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpsOWBnyE12ms5WaH0EZ8D9fYGRF9cyJh7CXpknsMEHjyDatYoEp-mUQS-i0zHc5P-f7WLTXcx3AmugIbozQnMlQ82SetdHJRUyUc0rq-ynBYEt7i_EjaWcXBl5oAPkjH8APuJTvcJQjjXAbQUAheKftGjl1aZc99ENpWoiHtFTEli3kz2u0SwxLPqgQmL4IZ3kshwXJUL7sV9j78V4DYz6c-H5kvYMgbYtEFg0y27ku4cofX_puDsGfb5MdYsG7zirfd58cPvgNVj"/>
+</button>
+<button class="size-12 flex items-center justify-center bg-white/60 border border-white/80 rounded-lg hover:bg-white transition-colors group">
+<img alt="" class="size-6" data-alt="LinkedIn logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPPf9fXrVHHKa0owWS5HPSRutuEzfPdR4VniSdCARa-F5ITi51Aum9338j4TlxLqFd4AnAKB86Eg2diNDg0poe6I6iHzWHKj8rCTiU9rRgwm4DtvxuVIm4sLfbLQTyKWfDfjhicG142zwpgGW0IEnTniL311B92Ak2SXlAgcZtDobdT6jFLZ567PgDRWoec36NC5SW7OwVokCCZUws-zRiUTo5kL3aj3GkWnEBAsn7E2LZgUw6RfYLYoLwQiW2nXk5qIDxL5JjsRVe"/>
+</button>
+</div>
+<!-- Footer -->
+<div class="text-center mt-2">
+<p class="text-slate-600 text-sm">
+                    Masz juý konto? 
+                    <a class="text-primary font-bold hover:underline ml-1" href="#">Zaloguj si«</a>
+</p>
+</div>
+</div>
+<!-- iOS Bottom Indicator Mockup (Optional for aesthetic) -->
+<div class="w-32 h-1.5 bg-white/30 rounded-full mx-auto mt-4"></div>
+</div>
+</body></html>
